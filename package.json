@@ -1,0 +1,22 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "Mr-Coffee Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedarshadmehdi/Project3_Syed_.git"
+  },
+  "author": "Syed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syedarshadmehdi/Project3_Syed_/issues"
+  },
+  "homepage": "https://github.com/syedarshadmehdi/Project3_Syed_#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
