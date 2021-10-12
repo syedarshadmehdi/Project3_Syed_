@@ -13,13 +13,19 @@ app.use(express.urlencoded({ extended : true }))
 
 //Routes
 app.get('/', (req, res) => {
-    res.send("Welcome Syed")
+    res.send("<h1>Welcome to our schedule website</h1>")
 })
 
 //Get all users
 app.get('/users', (req,res) => {
 res.send(data.users)
 })
+
+//Get all Schedules
+
+app.get('/schedules', (req,res) => {
+    res.send(data.schedules)
+    })
 
 //Get all posts
 
@@ -40,10 +46,6 @@ app.get('/posts', (req,res) => {
        //Create new user
 
        app.post('/posts',(req, res)=> {
-
-        //Validate data
-
-
            //Add post to all posts
         data.posts.push(req.body)
         res.send(req.body)
