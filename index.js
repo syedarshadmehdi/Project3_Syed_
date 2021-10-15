@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000
 
 
 //JSON and form Parsing middleware
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -20,6 +19,13 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
     res.send(data.users)
 })
+
+//Get all posts
+app.get('/posts', (req, res) => {
+    console.log(data.posts)
+    res.send(data.posts)
+})
+
 //Get all schedules
 app.get('/schedules', (req, res) => {
     res.send(data.schedules)
@@ -27,6 +33,7 @@ app.get('/schedules', (req, res) => {
 
 //Get Individual User Id
 app.get('/users/:id', (req, res) => {
+    
     const user = data.users[req.params.id]
     res.send(user)
 })
@@ -39,12 +46,13 @@ app.get('/schedules/:id', (req, res) => {
 
 
 //Create new user
+app.post('/users', (req, res) => {
+    data.users.push(req.body)
+   console.log(req.body)
+   res.send(req.body)
 
-app.post('/posts', (req, res) => {
-    //Add post to all posts
-    data.posts.push(req.body)
-    res.send(req.body)
 })
+
 
 
 //Create new user
@@ -57,7 +65,7 @@ app.post('/users', (req, res) => {
 })
 //CRUD - Create, Read, Update, Delete
 
-//CRUD -   Post, get, put/patch, delete
+//CRUD -   post, get, put/patch, delete
 
 
 app.listen(PORT, () => {
