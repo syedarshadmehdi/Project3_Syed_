@@ -45,24 +45,23 @@ app.get('/schedules/:id', (req, res) => {
 })
 
 
-//Create new user
+//Create new post
 app.post('/users', (req, res) => {
     data.users.push(req.body)
    console.log(req.body)
    res.send(req.body)
-
 })
 
-
-
-//Create new user
+//Create new user password 
 
 app.post('/users', (req, res) => {
-    const password = req.body.password
+    const SHA256 = req.body.password
     const salt = bcrypt.genSaltSync(10)
-    const hash = bcrypt.hashSync(password, salt)
+    const hash = bcrypt.hashSync(SHA256, salt)
+    console.log(hash)
     res.send(hash)
 })
+
 //CRUD - Create, Read, Update, Delete
 
 //CRUD -   post, get, put/patch, delete
