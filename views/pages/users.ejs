@@ -9,18 +9,20 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
+                    <th scope="col"></th>
+                    <th scope="col px-4">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
                 </tr>
             </thead>
             <tbody>
                 <% for (let i=0; i < users.length; i++) { %>
                     <tr>
+                        <th scope="row"></th>
                         <td><%= users[i].firstname %></td>
                         <td><%= users[i].lastname %></td>
                         <td><%= users[i].email %></td>
@@ -33,6 +35,6 @@
       
     </main>
 
-     <!--Include Footer-->
+    <%- include('../partials/footer') %>
 </body>
 </html>
