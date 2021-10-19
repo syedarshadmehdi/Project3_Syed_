@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <form method="POST" action="/schedules">
+            <div>
+                <label for="user_id">User Id</label>
+                <input id="user_id" type="number" name="user_id">
+            </div>
+            <div>
+                <label for="day">Choose a day:</label>
+
+                <select id="day" name="day">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+            </div>
+            <div>
+                <label for="start_at">Choose Start Time:</label>
+                <select id="start_at" name="start_at">
+                  <option value="2PM">2PM</option>
+                  <option value="8AM">8AM</option>
+                </select>
+            </div>
+           
+            <div>
+                <label for="end_at">Choose End Time:</label>
+                <select id="end_at" name="end_at">
+                  <option value="4PM">4PM</option>
+                  <option value="6PM">6PM</option>
+                </select>
+            </div>
+
+            <button type="submit">Add new user</button>
+            
+        </form>
+    </main>
+</body>
+</html>

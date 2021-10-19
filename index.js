@@ -32,6 +32,13 @@ app.get('/users', (req, res) => {
     })
 })
 
+//Get all schedules
+app.get('/schedules', (req, res) => {
+    res.render('pages/schedules', {
+        schedules: data.schedules
+    })
+})
+
 //Get all posts
 app.post('./posts', (req, res) => {
     res.send(data.posts)
@@ -47,6 +54,11 @@ app.post('/posts', (req, res) => {
 //Add new user
 app.get('/users/add', (req, res) => {
     res.render('pages/new-user')
+})
+
+//Add new schedules
+app.get('/schedules/add', (req, res) => {
+    res.render('pages/new-schedules')
 })
 
 //Get Individual user
@@ -73,6 +85,19 @@ app.post('/users', (req, res) => {
     })
 
     res.redirect('/users')
+})
+
+//Create new schedules
+app.post('/schedules', (req, res) => {
+
+    data.schedules.push({
+        user_id: req.body.user_id,
+        day: req.body.day,
+        start_at: req.body.start_at,
+        end_at: req.body.end_at
+    })
+
+    res.redirect('/schedules')
 })
 app.listen(PORT, () => {
     console.log(`App is listening at http://localhost:${PORT}`)
