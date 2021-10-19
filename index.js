@@ -22,7 +22,6 @@ app.get('/users', (req, res) => {
 
 //Get all posts
 app.get('/posts', (req, res) => {
-    console.log(data.posts)
     res.send(data.posts)
 })
 
@@ -48,7 +47,6 @@ app.get('/schedules/:id', (req, res) => {
 //Create new post
 app.post('/users', (req, res) => {
     data.users.push(req.body)
-   console.log(req.body)
    res.send(req.body)
 })
 
@@ -58,7 +56,6 @@ app.post('/users', (req, res) => {
     const SHA256 = req.body.password
     const salt = bcrypt.genSaltSync(10)
     const hash = bcrypt.hashSync(SHA256, salt)
-    console.log(hash)
     res.send(hash)
 })
 
