@@ -1,53 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        .contact-form {
+            background-color: #fbfbfb;
+            padding: 15px 20px 15px;
+            border: 1px solid #ececec;
+            width: 340px;
+            margin: 50px auto;
+        }
+
+        .contact-form .form-header {
+            margin-bottom: 40px;
+        }
+
+        .contact-form form .btn {
+            width: 100%;
+        }
+
+        .contact-form .form-header h2 {
+            font-weight: bold;
+            color: #03a9f4;
+        }
+
+        /*-- CSS for extra small devices--*/
+        @media (max-width: 767px) {
+            .contact-form {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-        <form method="POST" action="/schedules">
-            <div>
-                <label for="user_id">User Id</label>
-                <input id="user_id" type="number" name="user_id">
+        <div class="contact-form">
+            <div class="form-header text-center">
+                <h2>Add new schedules</h2>
             </div>
-            <div>
-                <label for="day">Choose a day:</label>
+            <form method="POST" action="/schedules">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="user_id">User Id</label>
+                        <input type="number" id="user_id" name="user_id" placeholder="user id" class="form-control"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="day">Choose a day:</label>
 
-                <select id="day" name="day">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select>
-            </div>
-            <div>
-                <label for="start_at">Choose Start Time:</label>
-                <select id="start_at" name="start_at">
-                  <option value="2PM">2PM</option>
-                  <option value="8AM">8AM</option>
-                </select>
-            </div>
-           
-            <div>
-                <label for="end_at">Choose End Time:</label>
-                <select id="end_at" name="end_at">
-                  <option value="4PM">4PM</option>
-                  <option value="6PM">6PM</option>
-                </select>
-            </div>
+                        <select id="day" name="day" style="width: 250px;">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="start_at">Choose Start Time:</label>
+                    <select id="start_at" name="start_at" style="width: 215px;">
+                        <option value="2PM">2PM</option>
+                        <option value="8AM">8AM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="end_at">Choose End Time:</label>
+                    <select id="end_at" name="end_at" style="width: 225px;">
+                        <option value="4PM">4PM</option>
+                        <option value="6PM">6PM</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <button class="btn btn-primary">Add new schedules</button>
+                </div>
+            </form>
+        </div>
 
-            <button type="submit">Add new user</button>
-            
-        </form>
-    </main>
-    <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

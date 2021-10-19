@@ -9,18 +9,20 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>User Id</th>
-                    <th>Day</th>
-                    <th>Start time</th>
-                    <th>End time</th>
+                    <th scope="col"></th>
+                    <th scope="col">User Id</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Start time</th>
+                    <th scope="col">End time</th>
                 </tr>
             </thead>
             <tbody>
                 <% for (let i=0; i < schedules.length; i++) { %>
                     <tr>
+                        <th scope="row"></th>
                         <td><%= schedules[i].user_id %></td>
                         <td><%= schedules[i].day %></td>
                         <td><%= schedules[i].start_at %></td>
