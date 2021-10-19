@@ -18,6 +18,8 @@ app.use(morgan('dev'))
 //Set view engine
 app.set('view engine', 'ejs')
 
+//USE CSS FILE
+app.use('/assets', express.static('assets'))
 
 //Routing
 //Welcome page

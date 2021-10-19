@@ -6,35 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        .contact-form {
-            background-color: #fbfbfb;
-            padding: 15px 20px 15px;
-            border: 1px solid #ececec;
-            width: 340px;
-            margin: 50px auto;
-        }
-
-        .contact-form .form-header {
-            margin-bottom: 40px;
-        }
-
-        .contact-form form .btn {
-            width: 100%;
-        }
-
-        .contact-form .form-header h2 {
-            font-weight: bold;
-            color: #03a9f4;
-        }
-
-        /*-- CSS for extra small devices--*/
-        @media (max-width: 767px) {
-            .contact-form {
-                width: 90%;
-            }
-        }
-    </style>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -46,7 +18,7 @@
             </div>
             <form method="POST" action="/schedules">
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group" style="width: 340px;">
                         <label for="user_id">User Id</label>
                         <input type="number" id="user_id" name="user_id" placeholder="user id" class="form-control"
                             required />
@@ -54,7 +26,7 @@
                     <div class="form-group">
                         <label for="day">Choose a day:</label>
 
-                        <select id="day" name="day" style="width: 250px;">
+                        <select id="day" name="day" style="width: 320px;">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -67,14 +39,14 @@
                 </div>
                 <div class="form-group">
                     <label for="start_at">Choose Start Time:</label>
-                    <select id="start_at" name="start_at" style="width: 215px;">
+                    <select id="start_at" name="start_at" style="width: 320px;">
                         <option value="2PM">2PM</option>
                         <option value="8AM">8AM</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="end_at">Choose End Time:</label>
-                    <select id="end_at" name="end_at" style="width: 225px;">
+                    <select id="end_at" name="end_at" style="width: 320px;">
                         <option value="4PM">4PM</option>
                         <option value="6PM">6PM</option>
                     </select>
