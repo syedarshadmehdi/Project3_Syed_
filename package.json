@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev" : "nodemon index"
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/syedarshadmehdi/Project3_Syed_#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg-promise": "^10.11.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
