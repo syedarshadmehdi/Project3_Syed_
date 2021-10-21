@@ -17,8 +17,16 @@ app.set('view engine', 'ejs')
 
 //Routes
 app.get('/', (req, res) => {
-    res.render('pages/home')
+    db.any("SELECT username,day,starttime,endtime;")
+    .then(rows => {
+        console.log(rows);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 })
+
+module.exports = app;
 
 //Homepage
 app.get('/', (req, res) => {

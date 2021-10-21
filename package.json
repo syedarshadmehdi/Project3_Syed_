@@ -4,6 +4,10 @@
   "description": "Mr-Coffee Web App",
   "main": "index.js",
   "scripts": {
+    "create_db": "psql -U postgres -f create_db.sql",
+    "create_table": "psql -U postgres -d project3c -f create_table.sql",
+    "seed_tables" :"psql -U postgres -d project3c -f seed_tables.sql",
+    "setup_db": "npm run create_db && npm run create_table && npm run seed_tables",
     "start": "node index",
     "dev": "nodemon index"
   },
