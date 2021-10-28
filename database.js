@@ -1,6 +1,6 @@
 const pgp = require('pg-promise')()
-const cn = 'postgres://user:123456@localhost:3000/project3c'
+const cn = 'postgres://postgres:123456@localhost:5432/project3c'
 
-const db = pgp(connectionString)
+const db = pgp(cn)
 
 module.exports = db;

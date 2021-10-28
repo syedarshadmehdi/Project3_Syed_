@@ -17,16 +17,45 @@ app.set('view engine', 'ejs')
 
 //Routes
 app.get('/', (req, res) => {
-    db.any("SELECT username,day,starttime,endtime;")
-    .then(rows => {
-        console.log(rows);
+    db.any("SELECT username,day,starttime,endtime FROM users;")
+    .then(users => {
+        console.log(users);
+        res.render('pages/home',{users})
     })
     .catch(error => {
         console.log(error);
+        res.end()
     })
 })
 
-module.exports = app;
+//module.exports = app;
+
+//Routes
+app.get('/posts', (req,res) => {
+    db.any("SELECT username,day,starttime,endtime FROM users;")
+    .then(data => {
+        console.log(data);
+        res.render('pages/post',{data})
+    })
+    .catch(error => {
+        console.log(error);
+        res.end()
+    })
+});
+
+
+app.get('/users', (req,res) => {
+    db.any("SELECT username,day,starttime,endtime FROM users;")
+    .then(data => {
+        console.log(data);
+        res.render('pages/users',{data})
+    })
+    .catch(error => {
+        console.log(error);
+        res.end()
+    })
+});
+
 
 //Homepage
 app.get('/', (req, res) => {
@@ -36,10 +65,6 @@ app.get('/', (req, res) => {
     res.redirect //redirect to a new url/route eg: www.google.com
     res.end // end the request/ processing / send nothing back
 })
-
-
-
-
 
 
 app.listen(PORT, () => {
