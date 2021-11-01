@@ -1,11 +1,16 @@
 INSERT INTO 
-users (username, day, starttime, endtime)
+users (firstname, lastname, email, password)
 VALUES 
-('SallyWalsh','Sunday','13:00:00','18:00:00'),
-('PeterPiper','Monday','12:00:00','19:00:00'),
-('TomCruise','Tuesday','10:00:00','16:00:00');
+('Sally','Walsh','SallyWalsh@gmail.com','$2a$10$ZI3BNl5tcxBkLNt1G56UIeEBKsFEhSsWhoYLeMMH6VjSWKWb'),
+('Peter','Piper','PeterPiper@yahoo.com','$$2a$10$MdsvkbR5515dSOOQBwVbFehQkfg2nV8uELMBvW2sc4StEDwkkGSTy'),
+('Tom','Cruise','TomCruise@hotmail.com','$2a$10$ZI3BNl5tcxBkLNt1G56UIeEBKsFEhSsWhoYL');
 
 INSERT INTO
-users(username, day, starttime, endtime)
+users(firstname, lastname, email, password)
 VALUES
-('ChristyLee','Friday','12:00:00','15:00:00');
+('Christy','Lee','christylee@yahoo.com','kujh258935');
+
+  INSERT INTO 
+   schedules (user_id, day, start_at, end_at) 
+    VALUES ('3', 'Wednesday', '12:00:00', '16:00:00' );
+    VALUES ('4', 'Friday', '15:00:00', '23:00:00' );
