@@ -1,0 +1,40 @@
+.contact-form {
+    background-color: #fbfbfb;
+    padding: 15px 20px 15px;
+    border: 1px solid #ececec;
+    width: 450px;
+    margin: 50px auto;
+}
+
+.contact-form .form-header {
+    margin-bottom: 40px;
+}
+
+.contact-form form .btn {
+    width: 100%;
+}
+
+.contact-form .form-header h2 {
+    font-weight: bold;
+    color: #03a9f4;
+}
+
+/*-- CSS for extra small devices--*/
+@media (max-width: 767px) {
+    .contact-form {
+        width: 90%;
+    }
+}
+.logo1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+}
+.logo2 {
+    margin: 0 auto;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 100px;
+}

@@ -28,6 +28,20 @@ app.get('/', (req, res) => {
     })
 })
 
+
+//All users
+app.get('/users', (req, res) => {
+    db.any("SELECT username,day,starttime,endtime FROM users;")
+    .then(users => {
+        console.log(users);
+        res.render('pages/allusers',{users})
+    })
+    .catch(error => {
+        console.log(error);
+        res.end()
+    })
+})
+
 //module.exports = app;
 
 //Routes
