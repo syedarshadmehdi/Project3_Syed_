@@ -64,9 +64,12 @@ app.get('/schedules/add', (req, res) => {
 })
 
 //Get Individual user
-
 app.get('/users/:id', (req, res) => {
     const user = data.users[req.params.id]
+    if (user) {
+        res.render('pages/users', { user: user })
+    } else { res.send("user not exist") 
+}
     res.send(user)
 })
 
@@ -101,6 +104,7 @@ app.post('/schedules', (req, res) => {
 
     res.redirect('/schedules')
 })
+
 app.listen(PORT, () => {
     console.log(`App is listening at http://localhost:${PORT}`)
 })
